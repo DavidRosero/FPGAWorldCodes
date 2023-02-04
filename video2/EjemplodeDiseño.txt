@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+Entity Entidad is
+		port(
+			
+			);
+end Entidad;
+	
+Architecture Behavioral of Entidad is 
+begin
+
+end Behavioral;
