@@ -1,6 +1,6 @@
 --Descripcion:
 --Implementación de hardware para mostrar el uso de los displays de 7 segmentos
--- en un contador de 0 a 9 corriendo en una tarjeta Cyclone IV.
+--  en un contador de 0 a 9 corriendo en una tarjeta Cyclone IV.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
