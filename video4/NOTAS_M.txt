@@ -1,0 +1,148 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+--USE IEEE.NUMERIC_STD.ALL;
+--USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY NOTASMUSICALES IS
+
+PORT( CLK, LA, DO, MI, SOL, RE, FA, SI :IN STD_LOGIC;
+		SONIDO : INOUT STD_LOGIC
+
+		);
+END NOTASMUSICALES;
+
+ARCHITECTURE BEHAVIORAL OF NOTASMUSICALES IS 
+--------------------- FRECUENCIA LA ------------------------------
+SIGNAL CONT : STD_LOGIC_VECTOR (16 DOWNTO 0);
+CONSTANT CONT_MAX: STD_LOGIC_VECTOR := "11011101111100100"; --113636(DEC)
+--------------------- FRECUENCIA DO ------------------------------
+SIGNAL CONT1 : STD_LOGIC_VECTOR (17 DOWNTO 0);
+CONSTANT CONT_MAX1: STD_LOGIC_VECTOR := "101110110001010010"; --191570(DEC)
+--------------------- FRECUENCIA MI ------------------------------
+SIGNAL CONT2 : STD_LOGIC_VECTOR (17 DOWNTO 0);
+CONSTANT CONT_MAX2: STD_LOGIC_VECTOR := "100101000110100111"; --151975(DEC)
+--------------------- FRECUENCIA SOL -----------------------------
+SIGNAL CONT3 : STD_LOGIC_VECTOR (16 DOWNTO 0);
+CONSTANT CONT_MAX3: STD_LOGIC_VECTOR := "11111001000111111"; --127551(DEC)
+--------------------- FRECUENCIA RE ------------------------------
+SIGNAL CONT4 : STD_LOGIC_VECTOR (17 DOWNTO 0);
+CONSTANT CONT_MAX4: STD_LOGIC_VECTOR := "101001100100011001"; --170265(DEC)
+--------------------- FRECUENCIA FA ------------------------------
+SIGNAL CONT5 : STD_LOGIC_VECTOR (17 DOWNTO 0);
+CONSTANT CONT_MAX5: STD_LOGIC_VECTOR := "100010111101001000"; --143176(DEC)
+--------------------- FRECUENCIA SI ------------------------------
+SIGNAL CONT6 : STD_LOGIC_VECTOR (16 DOWNTO 0);
+CONSTANT CONT_MAX6: STD_LOGIC_VECTOR := "11000101101110111"; --101239(DEC)
+
+BEGIN
+------------------------- LA -------------------------------------
+
+	PROCESS(CLK)
+		BEGIN
+		IF CLK'EVENT AND CLK = '1' THEN
+			CONT <= CONT + 1;
+			IF CONT = CONT_MAX THEN
+				CONT <= "00000000000000000";
+			END IF;
+		END IF;
+	END PROCESS;
+	
+------------------------- DO -------------------------------------
+
+	PROCESS(CLK)
+		BEGIN
+		IF CLK'EVENT AND CLK = '1' THEN
+			CONT1 <= CONT1 + 1;
+			IF CONT1 = CONT_MAX1 THEN
+				CONT1 <= "000000000000000000";
+			END IF;
+		END IF;
+	END PROCESS;
+	
+------------------------- MI -------------------------------------
+
+	PROCESS(CLK)
+		BEGIN
+		IF CLK'EVENT AND CLK = '1' THEN
+			CONT2 <= CONT2 + 1;
+			IF CONT2 = CONT_MAX2 THEN
+				CONT2 <= "000000000000000000";
+			END IF;
+		END IF;
+	END PROCESS;
+	
+------------------------- SOL -------------------------------------
+
+	PROCESS(CLK)
+		BEGIN
+		IF CLK'EVENT AND CLK = '1' THEN
+			CONT3 <= CONT3 + 1;
+			IF CONT3 = CONT_MAX3 THEN
+				CONT3 <= "00000000000000000";
+			END IF;
+		END IF;
+	END PROCESS;
+	
+------------------------- RE -------------------------------------
+
+	PROCESS(CLK)
+		BEGIN
+		IF CLK'EVENT AND CLK = '1' THEN
+			CONT4 <= CONT4 + 1;
+			IF CONT4 = CONT_MAX4 THEN
+				CONT4 <= "000000000000000000";
+			END IF;
+		END IF;
+	END PROCESS;
+	
+------------------------- FA -------------------------------------
+
+	PROCESS(CLK)
+		BEGIN
+		IF CLK'EVENT AND CLK = '1' THEN
+			CONT5 <= CONT5 + 1;
+			IF CONT5 = CONT_MAX5 THEN
+				CONT5 <= "000000000000000000";
+			END IF;
+		END IF;
+	END PROCESS;
+	
+------------------------- SI -------------------------------------
+
+	PROCESS(CLK)
+		BEGIN
+		IF CLK'EVENT AND CLK = '1' THEN
+			CONT6 <= CONT6 + 1;
+			IF CONT6 = CONT_MAX6 THEN
+				CONT6 <= "00000000000000000";
+			END IF;
+		END IF;
+	END PROCESS;
+	
+------------------------SONIDO EN LA FPGA ----------------------------
+
+	PROCESS(SONIDO)
+		BEGIN
+			IF LA = '0' THEN
+				SONIDO <= CONT (16);
+				ELSIF DO = '0' THEN
+					SONIDO <= CONT1(17);
+					ELSIF MI = '0' THEN
+					SONIDO <= CONT2(17);
+					ELSIF SOL = '0' THEN
+					SONIDO <= CONT3(16);
+					ELSIF RE = '0' THEN
+					SONIDO <= CONT4(17);
+					ELSIF FA = '0' THEN
+					SONIDO <= CONT5(17);
+					ELSIF SI = '0' THEN
+					SONIDO <= CONT6(16);
+				ELSE
+					SONIDO <= '1';
+				END IF;
+			END PROCESS;
+------------------------------------------------------------
+				
+END BEHAVIORAL;
+		
