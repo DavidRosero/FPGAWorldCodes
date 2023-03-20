@@ -10,8 +10,6 @@ entity i2c_leds is
 	sda						:inout std_logic;
 	clk						:in	 std_logic;
 	rst						:in	 std_logic;
-	displays					:out	 std_logic_vector(7 downto 0);
-	transistor				:out	 std_logic;
 	led_o						:out	 std_logic_vector(7 downto 0)
  );
 end entity;
@@ -24,7 +22,7 @@ signal data_valid			: std_logic;
 signal data_from_master : std_logic_vector(7 downto 0);
 
 signal data_reg  : std_logic_vector(7 downto 0);
-signal displaysig	: std_logic_vector(7 downto 0);
+
 
 begin
 
