@@ -17,7 +17,7 @@ end HCSR05;
 
 architecture Behavioral of HCSR05 is 
 
---COMPONENT TriggerGen
+COMPONENT TriggerGen
 	PORT(
 		clk : IN std_logic;          
 		trigger : OUT std_logic
