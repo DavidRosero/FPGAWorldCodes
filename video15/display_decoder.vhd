@@ -34,7 +34,7 @@ unidades	   <="0000000" when distance_in1 = "000000000" else --0
 				  "0000111" when distance_in1 = "000000111" else --7
 				  "0001000" when distance_in1 = "000001000" else --8
 				  "0001001" when distance_in1 = "000001001" else --9
-				  "0001010" when distance_in1 = "000001010" else --10
+				  "0000000" when distance_in1 = "000001010" else --10
 				  ---------------despues de 10cm---------------- 
 				  "0000001" when distance_in1 = "000001011" else --11
 				  "0000010" when distance_in1 = "000001100" else --12
