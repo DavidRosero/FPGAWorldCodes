@@ -11,6 +11,6 @@ Hola a todos como están espero que bien, he decidido agregar README con informa
 <p>
 Asi que lo usare a partir de ahora en mis proximos proyectos.
 </p>
-## VIDEO TUTORIAL
+VIDEO TUTORIAL
 
 - https://www.youtube.com/watch?v=xTD4T6GfeRk
