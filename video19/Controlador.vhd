@@ -27,8 +27,8 @@ begin
 		when "00001001" => sw0_1 <= "000"; --9 <--- Izquierda (MOV IZQUIERDA)
 		when "00001011" => sw0_1 <= "001"; --11 ---> Derecha (DIAG DERECHA_ARRIBA)
 		when "00001101" => sw0_1 <= "000"; --13 <--- Izquierda (DIAG IZQUIERDA_ABAJO)
-		when "00010011" => sw0_1 <= "001"; --19 ---> Derecha (GIRO IZQUIERDA)
-		when "00010101" => sw0_1 <= "000"; --21 <--- Izquierda (GIRO DERECHA)
+		when "00010011" => sw0_1 <= "000"; --19 <--- Izquierda (GIRO IZQUIERDA)
+		when "00010101" => sw0_1 <= "001"; --21 ---> Derecha (GIRO DERECHA)
 		when others => sw0_1 <= "111"; --1 DETENER MOTORES
 	end case;
 end process;
@@ -44,8 +44,8 @@ begin
 		when "00001001" => sw0_2 <= "001"; --9 ---> Derecha (MOV IZQUIERDA)
 		when "00001111" => sw0_2 <= "001"; --15 ---> Derecha (DIAG IZQUIERDA_ARRIBA)
 		when "00010001" => sw0_2 <= "000"; --17 <--- Izquierda (DIAG DERECHA_ABAJO)
-		when "00010011" => sw0_2 <= "000"; --19 <--- Izquieda (GIRO IZQUIERDA)
-		when "00010101" => sw0_2 <= "001"; --21 ---> Derecha (GIRO DERECHA)
+		when "00010011" => sw0_2 <= "001"; --19 ---> Derecha (GIRO IZQUIERDA)
+		when "00010101" => sw0_2 <= "000"; --21 <--- Izquierda (GIRO DERECHA)
 		when others => sw0_2 <= "111"; --1 DETENER MOTORES
 	end case;
 end process;
@@ -55,13 +55,13 @@ begin
 	case led is
 		--LOGICA NORMAL         --LOGICA INVERSA
 		when "00000011" => sw0_3 <= "001"; --3 ---> Derecha (MOV ADELANTE)
-		when "00000101" => sw0_3 <= "000"; --5 ---> Izquierda (MOV ATRAS)
-		when "00000111" => sw0_3 <= "000"; --7 ---> Izquierda (MOV DERECHA)
+		when "00000101" => sw0_3 <= "000"; --5 <--- Izquierda (MOV ATRAS)
+		when "00000111" => sw0_3 <= "000"; --7 <--- Izquierda (MOV DERECHA)
 		when "00001001" => sw0_3 <= "001"; --9 ---> Derecha (MOV IZQUIERDA)
 		when "00001111" => sw0_3 <= "001"; --15 ---> Derecha (DIAG IZQUIERDA_ARRIBA)
-		when "00010001" => sw0_3 <= "000"; --17 ---> Izquierda (DIAG DERECHA_ABAJO)
-		when "00010011" => sw0_3 <= "001"; --19 ---> Derecha (GIRO IZQUIERDA)
-		when "00010101" => sw0_3 <= "000"; --21 ---> Izquierda (GIRO DERECHA)
+		when "00010001" => sw0_3 <= "000"; --17 <--- Izquierda (DIAG DERECHA_ABAJO)
+		when "00010011" => sw0_3 <= "000"; --19 <--- Izquierda (GIRO IZQUIERDA)
+		when "00010101" => sw0_3 <= "001"; --21 ---> Derecha (GIRO DERECHA)
 		when others => sw0_3 <= "111"; --1 DETENER MOTORES
 	end case;
 end process;
@@ -76,8 +76,8 @@ begin
 		when "00001001" => sw0_4 <= "000"; --9 <--- Izquierda (MOV IZQUIERDA)
 		when "00001011" => sw0_4 <= "001"; --11 ---> Derecha (DIAG DERECHA_ARRIBA)
 		when "00001101" => sw0_4 <= "000"; --13 <--- Izquierda (DIAG IZQUIERDA_ABAJO)
-		when "00010011" => sw0_4 <= "000"; --19 <--- Izquierda (GIRO IZQUIERDA)
-		when "00010101" => sw0_4 <= "001"; --21 ---> Derecha (GIRO DERECHA)
+		when "00010011" => sw0_4 <= "001"; --19 ---> Derecha (GIRO IZQUIERDA)
+		when "00010101" => sw0_4 <= "000"; --21 <--- Izquierda (GIRO DERECHA)
 		when others => sw0_4 <= "111"; --1 DETENER MOTORES
 	end case;
 end process;
