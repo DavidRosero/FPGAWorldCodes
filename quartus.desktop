@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Name=Quartus (Quartus Prime 20.1) Lite Edition
+Comment=Quartus (Quartus Prime 20.1)
+Icon=/home/david/intelFPGA_lite/20.1/quartus/adm/quartusii.png
+Exec=/home/david/intelFPGA_lite/20.1/quartus/bin/quartus --64bit
+Terminal=false
+Path=/home/david/intelFPGA_lite/20.1
